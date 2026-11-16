@@ -1,0 +1,58 @@
+{
+  "audit_scope": "packaged source, static dashboard arrays, stored simulator metrics, reported development-date summaries",
+  "full_simulator_or_observational_replay_performed": false,
+  "source_code_tests_reported_separately": true,
+  "model_weights_sha256_match_embedded_decision_report": true,
+  "dashboard_state": {
+    "full_buildings": 88,
+    "model_methods_verified": [
+      "ai",
+      "hotspot_ai",
+      "physics",
+      "no_reflection"
+    ],
+    "hours_per_scenario": 24,
+    "surface_patches": 2082,
+    "different_methods_have_distinct_values": true
+  },
+  "simulator_hotspots_top20": {
+    "specialist_capture_percent": 85.87928725446315,
+    "direct_exposure_capture_percent": 11.455669865388982,
+    "independent_wall_sensor_validation": false,
+    "new_unseen_holdout": false
+  },
+  "simulator_roof_selection": {
+    "3": {
+      "ai_percent": 100.0,
+      "baseline_percent": 100.0,
+      "ai_improves": false
+    },
+    "5": {
+      "ai_percent": 100.0,
+      "baseline_percent": 100.0,
+      "ai_improves": false
+    },
+    "10": {
+      "ai_percent": 100.0,
+      "baseline_percent": 100.0,
+      "ai_improves": false
+    }
+  },
+  "reported_2025_development_satellite": {
+    "dates": 5,
+    "correlated_matched_grid_cells": 135,
+    "equal_scene_mean_grid_cell_MAE_C": {
+      "decision_ai": 6.226528750372578,
+      "physics": 6.169447093740418,
+      "no_reflection": 6.323104272806142
+    },
+    "ai_better_than_physics_dates": 0,
+    "ai_better_than_no_reflection_dates": 3,
+    "raw_validator_outputs_reproduced_in_package": false,
+    "measured_rooftop_accuracy": false
+  },
+  "2026_physics_only_evidence_is_not_ai_validation": true,
+  "real_roof_cooling_demonstrated": false,
+  "research_screening_not_roofing_approval": true,
+  "interpretation": "Simulation-based hotspot selection benefit is the primary supported AI decision finding; rooftop selection shows no improvement over simpler rules; observational accuracy remains unestablished."
+}

@@ -1,0 +1,15 @@
+# UrbanRay — Finding Hidden Solar Reflection Hotspots
+
+**Problem.** An urban street canyon can absorb sunlight not only through direct solar illumination but also through reflected light from surrounding roofs, façades, and the ground. A simple direct-sun analysis does not reveal these secondary pathways. Where should a researcher inspect potential reflected-heat hotspots first?
+
+**AI approach.** UrbanRay combines 88 real NYC public building footprints and a simplified multibounce radiation simulator with a gradient-boosted reflection-residual model. The AI estimates the extra simulated radiation absorbed above a direct-plus-sky baseline. A new interactive 3D/2D research dashboard lets users inspect reflected-sun estimates, reference physics, differences, and counterfactual dark-vs-reflective roof scenarios. Roofs can also be ranked by **modeled solar heat avoided (thermal kWh/day, not electricity)**.
+
+**Evidence of decision usefulness — against a simulator.** On a locked June 23, 2025 date-and-spatial-block test, **314 correlated held-out wall patches** were ranked by one-day reflected-solar exposure. Selecting the 20 highest-risk patches using AI captures **81.14% of the physics reference's maximum possible top-20 exposure**, versus **11.46%** for a direct-exposure-only heuristic. This is a *simulator-relative* selection benchmark, not measured wall-heat exposure or proven real-world cooling. The AI did **not** improve top 3/5/10 modeled roof-selection outcomes over the simpler baseline, nor was it faster than the sparse physics solver in the existing smoke benchmark.
+
+**Real-world data and next step.** A separate historical physics-only model produced a thermal emission proxy compared with real Landsat Collection 2 scenes: five held-out 2026 scene means yielded **3.526 °C raw MAE**. Those retrievals mix surfaces and do not measure individual roofs, and **the AI has not yet been evaluated against those observed temperatures**. A new verified-weather, matched-scene evaluation script now supports such a future comparison without fabricating results.
+
+**Credibility and limits.** Public NYC geometry is real; modeled surface materials, albedos, reflection transfers and roof counterfactuals are assumptions. One day in one neighborhood does not establish transferability. The dashboard shows model output and archived satellite comparisons separately. The code includes 46 passing local tests and an offline interactive demo. See `REAL_WORLD_UPGRADE_REPORT.md` for methods and complete caveats.
+
+**Sources and credits.** NYC Open Data building footprints; Open-Meteo historical weather; USGS Landsat Collection 2; scikit-learn, NumPy, pandas, SciPy, Plotly, Shapely and other libraries listed in `requirements.txt`; OpenAI ChatGPT (GPT-6) development assistance. See existing original provenance and `REAL_WORLD_UPGRADE_REPORT.md` for links.
+
+**Veritas AI warning.** This version extends an earlier project. The November 14–15, 2026 event rules expressly prohibit extensions of work built before the hackathon. It cannot be presented as an eligible weekend-created project without organizer confirmation.
